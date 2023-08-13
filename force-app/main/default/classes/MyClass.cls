@@ -10,3 +10,4 @@ public with sharing class MyClass {
 // MyClass myClass = new MyClass();
 
 // MyClass.func1(opps);
+

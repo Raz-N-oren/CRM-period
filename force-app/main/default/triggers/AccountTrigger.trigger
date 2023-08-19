@@ -9,15 +9,18 @@ trigger AccountTrigger on Account (after update) {
         }
     }
 
-    List<Contact> contList = new List<Contact>([SELECT Id, MailingCity,AccountId
-                                                FROM Contact
-                                                WHERE AccountId IN: accIds]);
+    if(accIds.size()>0){
+        List<Contact> contList = new List<Contact>([SELECT Id, MailingCity,AccountId
+                                                    FROM Contact
+                                                    WHERE AccountId IN: accIds]);
+    
+        for (Contact con : contList) {
+            con.MailingCity = Trigger.NewMap.get(con.AccountId).BillingCity;
+        }
 
-    for (Contact con : contList) {
-        con.MailingCity = Trigger.NewMap.get(con.AccountId).BillingCity;
+        if(contList.size() > 0){
+            update contList;
+        }
     }
 
-    if(contList.size() > 0){
-        update contList;
-    }
 }

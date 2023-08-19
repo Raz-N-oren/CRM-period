@@ -1,5 +1,7 @@
+// This trigger fires before Account records are updated.
 trigger AddressChangedCounterOnAccount on Account (before update) {
 
+    // Loop through each updated Account record in the Trigger.New collection.
     for (Account newAccount : Trigger.new) {
         Account oldAccount = Trigger.oldMap.get(newAccount.Id);
 

@@ -14,7 +14,7 @@ trigger ContactTrigger on Contact (after delete) {
     
     for (Account acc : accountsToUpdate) {
         // Increase the 'Num_Contacts_Deleted__c' counter by 1 for each Account.
-        acc.Number_Of_Contacts_Deleted__c	 = acc.Number_Of_Contacts_Deleted__c != null ? acc.Number_Of_Contacts_Deleted__c + 1 : 1;
+        acc.Number_Of_Contacts_Deleted__c = acc.Number_Of_Contacts_Deleted__c != null ? acc.Number_Of_Contacts_Deleted__c + 1 : 1;
 
         // Update the 'Last_Contact_Deletion_Date__c' with the current date.
         acc.Last_Contact_Deletion_Date__c = System.today();

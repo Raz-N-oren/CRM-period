@@ -1,3 +1,43 @@
+trigger ContactTrigger on Contact (after delete){
+    Map<Id,Integer> AccountIdsMap = new Map<Id,Integer>();
+    List<Account> AccList4Update = new List<Account>();
+
+    for(Contact c : Trigger.Old){
+        if(!AccountIdsMap.containsKey(c.AccountId)){
+            AccountIdsMap.put(c.AccountId,1);
+        }
+        else{
+            AccountIdsMap.put(c.AccountId,AccountIdsMap.get(c.AccountId)+1);
+        }
+    }
+
+    
+    for (Id accId : AccountIdsMap.keySet()) {
+        Account Acc = new Account(Id = accId);
+        Acc.Last_Contact_Deletion_Date__c = System.today();
+        AccList4Update.add(Acc);
+    }
+
+    // List<Account>RelevantConAcc = [SELECT Id, Number_Of_Contacts_Deleted__c  FROM Account WHERE Id IN :AccountIdsMap.keySet()];
+
+    // if(RelevantConAcc.size()>0){
+    //     for(Account a : RelevantConAcc){
+    //         if(a.Number_Of_Contacts_Deleted__c == null){
+    //             a.Number_Of_Contacts_Deleted__c = AccountIdsMap.get(a.Id);
+    //         }
+    //         else{
+    //             a.Number_Of_Contacts_Deleted__c += AccountIdsMap.get(a.Id);
+    //         }
+    //         a.Last_Contact_Deletion_Date__c = System.today();
+    //         AccList4Update.add(a);
+    //     }
+    // }
+    if(AccList4Update.size() > 0){
+        update AccList4Update;
+    }
+}
+
+/* 
 // This trigger fires after Contact records are deleted.
 trigger ContactTrigger on Contact (after delete) {
 
@@ -25,3 +65,5 @@ trigger ContactTrigger on Contact (after delete) {
 }
 
 // List<Account> sortedAccounts = [SELECT Id, Name, Last_Contact_Deletion_Date__c FROM Account ORDER BY Last_Contact_Deletion_Date__c DESC];
+*/
+

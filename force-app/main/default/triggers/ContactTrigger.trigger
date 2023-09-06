@@ -66,4 +66,3 @@ trigger ContactTrigger on Contact (after delete) {
 
 // List<Account> sortedAccounts = [SELECT Id, Name, Last_Contact_Deletion_Date__c FROM Account ORDER BY Last_Contact_Deletion_Date__c DESC];
 */
-

@@ -1,0 +1,19 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open>
+        <!-- Section 1: Today's Date and Time -->
+        <lightning-accordion-section label="Section 1">
+            <c-current-date-time></c-current-date-time>
+        </lightning-accordion-section>
+
+        <!-- Section 2: Input Field -->
+        <lightning-accordion-section label="Section 2">
+            <lightning-input label="Enter Text" value={inputValue} onchange={handleInputChange}></lightning-input>
+            <div>{displayedText}</div>
+        </lightning-accordion-section>
+
+        <!-- Section 3: Your Name in Special Font and Color -->
+        <lightning-accordion-section label="Section 3">
+            <div class="special-font-color">{inputValue}</div>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

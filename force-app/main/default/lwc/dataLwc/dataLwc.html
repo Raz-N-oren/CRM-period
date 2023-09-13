@@ -1,0 +1,67 @@
+<template>
+    <!-- Class exercise 1  start -->
+        <!-- <lightning-record-edit-form
+            object-api-name="Account">
+            <lightning-input-field field-name="Name"> </lightning-input-field>
+            <lightning-input-field field-name="Phone"> </lightning-input-field>
+            <lightning-input-field field-name="Website"> </lightning-input-field>
+            <div class="slds-var-m-top_medium">
+                <lightning-button variant="brand" type="submit"  onclick={handleClick}  label="Save">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form> -->
+    
+    <!-- Class exercise 1  end  -->
+    
+        <lightning-button variant="brand"  onclick={handleClick}  label="Click"></lightning-button>
+    
+        <template if:true={showData}>
+            <lightning-record-edit-form
+                object-api-name="Account">
+                <lightning-input-field field-name="Name"> </lightning-input-field>
+                <lightning-input-field field-name="Phone"> </lightning-input-field>
+                <lightning-input-field field-name="Website"> </lightning-input-field>
+                <div class="slds-var-m-top_medium">
+                    <lightning-button variant="brand" type="submit"  onclick={handleClick}  label="Save">
+                    </lightning-button>
+                </div>  
+            </lightning-record-edit-form>
+        </template>
+        
+        <!-- <lightning-card>
+            <lightning-record-form
+            object-api-name={objectApiName}
+            fields={fields}
+            onsuccess={handleSuccess}
+            record-id={recordId}
+            columns="2"
+            >
+            </lightning-record-form>
+        </lightning-card>
+        
+    
+        <lightning-record-view-form
+        object-api-name={objectApiName}
+        record-id={recordId}
+    >
+        <lightning-output-field field-name="Name"> </lightning-output-field>
+    </lightning-record-view-form>
+    
+    
+    <lightning-record-edit-form
+        object-api-name={objectApiName}
+        record-id={recordId}
+    >
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+    
+        <div class="slds-hidden">
+    
+        <lightning-input-field field-name="Phone" value={accountPhone}> </lightning-input-field>
+    
+        </div>
+        <div class="slds-var-m-top_medium">
+            <lightning-button variant="brand" onclick={} type="submit" label="Save">
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form> -->
+    </template>

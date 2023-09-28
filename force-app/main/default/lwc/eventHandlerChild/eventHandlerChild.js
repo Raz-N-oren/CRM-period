@@ -4,7 +4,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class EventHandlerChild extends LightningElement {
     @api showToast(message) {
-        alert(message);
+        // alert(message);
         const toastEvent = new ShowToastEvent({
             title: 'Custom Event Message',
             message: message,

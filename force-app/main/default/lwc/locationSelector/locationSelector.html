@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Location Selector" icon-name="standard:location">
+        <!-- Location selection dropdown -->
+        <lightning-combobox
+            label="Select Location"
+            value={selectedLocation}
+            options={locationOptions}
+            onchange={handleLocationChange}>
+        </lightning-combobox>
+
+        <!-- Display Freelancers and Projects based on the selected location -->
+        <div if:true={selectedLocation}>
+            <c-freelancer-list
+                freelancer-data={freelancerData}
+                freelancer-columns={freelancerColumns}>
+            </c-freelancer-list>
+            <c-project-list
+                project-data={projectData}
+                project-columns={projectColumns}>
+            </c-project-list>
+        </div>
+    </lightning-card>
+</template>

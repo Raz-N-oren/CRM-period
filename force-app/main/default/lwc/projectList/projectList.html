@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Projects" icon-name="custom:custom58">
+        <!-- Display project data here -->
+        <lightning-datatable
+            key-field="Id"
+            data={projectData}
+            columns={projectColumns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+</template>

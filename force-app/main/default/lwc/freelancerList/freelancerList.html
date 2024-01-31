@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Freelancers" icon-name="custom:custom58">
+        <!-- Display freelancer data here -->
+        <lightning-datatable
+            key-field="Id"
+            data={freelancerData}
+            columns={freelancerColumns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+</template>

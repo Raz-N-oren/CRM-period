@@ -1,7 +1,7 @@
-    /* Created By: Raz
-     * Params: -
-     * Description: intended for managing group assignments within Chatter groups,
-     */
+/* Created By: Raz
+* Params: -
+* Description: intended for managing group assignments within Chatter groups,
+*/
 public class ChatterGroup_ManageGroupAssignment {
     
     Set<string> existingGroupName = new Set<string>();    
@@ -202,9 +202,4 @@ public class ChatterGroup_ManageGroupAssignment {
             System.debug( 'An error occurred in removeUserFromPublicGroup: ' + e.getMessage());
         }
     }
-
-
-
-
-
 }

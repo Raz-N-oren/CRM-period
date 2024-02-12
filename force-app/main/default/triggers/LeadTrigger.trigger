@@ -1,5 +1,5 @@
 // This trigger fires before Lead records are insert.
-trigger LeadTrigger on Lead (before insert) {
+trigger LeadTrigger on Lead (before insert, before update) {
 
     // This loop iterates through each Lead record in the Trigger.New collection, which contains the Leads being inserted.
     for (Lead l : Trigger.New) {

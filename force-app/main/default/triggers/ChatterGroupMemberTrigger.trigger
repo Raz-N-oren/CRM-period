@@ -4,4 +4,5 @@
      */
 trigger ChatterGroupMemberTrigger on CollaborationGroupMember (after insert, before delete) {
     ChatterGroup_ManageGroupAssignment ManageGroupAssignment= new ChatterGroup_ManageGroupAssignment(Trigger.operationType);
+
 }

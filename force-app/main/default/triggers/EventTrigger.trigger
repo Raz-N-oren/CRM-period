@@ -5,11 +5,11 @@
 //         List<Messaging.SingleEmailMessage> mails = new List<Messaging.SingleEmailMessage>();
 //         Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
 //         List<String> sentTo = new List<string>();
-//         sentTo.add('razoren2394@gmail.com');
+//         sentTo.add('mayc5211@gmail.com');
 //         mail.setToAddresses(sentTo);
 //         mail.setSubject('Good Luck');
 //         String body = (event.Description__c);
-//         mail.setHtmlBody(body);
+//         mail.setPlainTextBody(body);
 //         mails.add(mail);
 //         Messaging.sendEmail(mails);
 

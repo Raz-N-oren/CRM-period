@@ -38,12 +38,12 @@ public class ChatterGroup_ManageGroupAssignment {
                     System.debug('Entered AFTER_INSERT');
                     createPublicGroups();
                     createPublicGroupMembers();
-                    System.debug('Exited  AFTER_INSERT');
+                    System.debug('Exited AFTER_INSERT');
                     }
                 WHEN BEFORE_DELETE{
-                    System.debug('Entered AFTER_DELETE');
+                    System.debug('Entered BEFORE_DELETE');
                     removeUserFromPublicGroup();
-                    System.debug('Exited  AFTER_DELETE');
+                    System.debug('Exited BEFORE_DELETE');
                 }
             }
 
